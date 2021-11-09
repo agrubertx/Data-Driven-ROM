@@ -9,7 +9,7 @@ filename = os.path.abspath(os.path.join(dir, '..'))
 sys.path.append(filename)
 
 from src.networks import NetFCNN
-from src.utils import save_checkpoints, Assigner, train_network
+from src.utils import save_checkpoints, Assigner, train_network, compute_errors
 
 
 ########## Training ##########
@@ -22,7 +22,7 @@ model_name=f'testBurgersFC'   # for saving and loading
 net = NetFCNN(1, 10, 3, 4, [256,64])
 print(net)
 
-train_network(net, model_name, data, 20, 0.0005, no_pde=True)
+train_network(net, model_name, data, 20, 0.0005, no_pde=False)
 
 
 ########## Testing ##########
@@ -47,8 +47,8 @@ fcnn_recon = torch.tensor(fcnn_recon)
 fcnnL1, fcnnL2 = compute_errors(fcnn_recon, data.Stest)
 
 print('Errors in original vs reconstructed solution:')
-print(f'The relative L-1 Error is {cnnL1.item():.5f}% for CNN, {gcnL1.item():.5f}% for GCN, and {fcnnL1.item():.5f}% for FCNN')
-print(f'The relative L-2 Error is {cnnL2.item():.5f}% for CNN, {gcnL2.item():.5f}% for GCN, and {fcnnL2.item():.5f}% for FCNN')
+print(f'The relative L-1 Error is {fcnnL1.item():.5f}% for FCNN')
+print(f'The relative L-2 Error is {fcnnL2.item():.5f}% for FCNN')
 
 # pts = [525, 551, 576, 601]
 pts = [525, 560, 595]

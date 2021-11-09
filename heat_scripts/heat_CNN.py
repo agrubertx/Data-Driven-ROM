@@ -49,8 +49,8 @@ cnn_recon = torch.tensor(cnn_recon)
 cnnL1, cnnL2 = compute_errors(cnn_recon, data.UTest)
 
 print('Errors in original vs reconstructed solution:')
-print(f'The relative L-1 Error is {cnnL1.item():.5f}% for CNN, {gcnL1.item():.5f}% for GCN, and {fcnnL1.item():.5f}% for FCNN')
-print(f'The relative L-2 Error is {cnnL2.item():.5f}% for CNN, {gcnL2.item():.5f}% for GCN, and {fcnnL2.item():.5f}% for FCNN')
+print(f'The relative L-1 Error is {cnnL1.item():.5f}% for CNN')
+print(f'The relative L-2 Error is {cnnL2.item():.5f}% for CNN')
 
 list = [100, 1000, 1500]
 words = ['Exact', 'CNN']

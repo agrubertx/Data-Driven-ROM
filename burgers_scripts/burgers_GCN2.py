@@ -21,7 +21,7 @@ model_name=f'testBurgersGCNN'   # for saving and loading
 net = NetGCN2(256, 3, 3, 8, 1, 4, data.edge_index[0])
 print(net)
 
-train_network(net, model_name, data, 20, 0.0025, no_pde=True)
+train_network(net, model_name, data, 20, 0.0025, no_pde=False)
 
 
 ########## Testing ##########
@@ -46,8 +46,8 @@ gcn_recon = torch.tensor(gcn_recon)
 gcnL1, gcnL2 = compute_errors(gcn_recon, data.Stest)
 
 print('Errors in original vs reconstructed solution:')
-print(f'The relative L-1 Error is {cnnL1.item():.5f}% for CNN, {gcnL1.item():.5f}% for GCN, and {fcnnL1.item():.5f}% for FCNN')
-print(f'The relative L-2 Error is {cnnL2.item():.5f}% for CNN, {gcnL2.item():.5f}% for GCN, and {fcnnL2.item():.5f}% for FCNN')
+print(f'The relative L-1 Error is {gcnL1.item():.5f}% for GCN')
+print(f'The relative L-2 Error is {gcnL2.item():.5f}% for GCN')
 
 # pts = [525, 551, 576, 601]
 pts = [525, 560, 595]
