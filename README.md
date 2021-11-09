@@ -17,7 +17,9 @@ The code was written and tested using Python 3.8 on Mac OSX 11.2.3.  The require
 * [Matplotlib](https://matplotlib.org/) (for visualization)
 
 ## Data
-The necessary data for reproducing the experiments in the paper is found in the "datasets" folder.  Note that the larger files are stored using Git LFS due to their size.  To use your own dataset, load it into a data object with the following attributes:
+The necessary heat equation and burger's equation data for reproducing the experiments in the paper is found in the "datasets" folder.  Note that the larger file is stored using Git LFS due to its size (~500 MB).  The NSE dataset is available on request, but it is not included here due to its ~1.2GB size.
+
+To use your own dataset with our algorithms, load it into a data object with the following attributes:
 - *xTrain, xValid* tensors representing training and validation solution snapshots.
 - *pTrain, pValid* tensors representing training and validation points in parameter space, ordered consistently with the solution snapshots.
 - *edge_index* (2 x nEdges) LongTensor encoding the sparse adjacency matrix (see [here](https://pytorch-geometric.readthedocs.io/en/latest/notes/introduction.html)).
