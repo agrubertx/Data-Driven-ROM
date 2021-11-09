@@ -1,5 +1,4 @@
 import numpy as np
-import scipy as sp
 import torch
 from torch.nn import MSELoss, L1Loss
 import os, time, pickle
