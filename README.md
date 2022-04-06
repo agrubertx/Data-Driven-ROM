@@ -30,11 +30,12 @@ Take a look at the network classes in *src/networks* and the function "train_net
 ## Citation
 Please cite [our paper](https://arxiv.org/pdf/2110.03442.pdf) if you use this code in your own work:
 ```
-@misc{gruber2021comparison,
-  title={A Comparison of Neural Network Architectures for Data-Driven Reduced-Order Modeling},
-  author={Anthony Gruber and Max Gunzburger and Lili Ju and Zhu Wang},
-  year={2021},
-  eprint={2110.03442},
-  archivePrefix={arXiv},
-  primaryClass={cs.LG}
+@article{gruber2022comparison,
+  title={A comparison of neural network architectures for data-driven reduced-order modeling},
+  author={Gruber, Anthony and Gunzburger, Max and Ju, Lili and Wang, Zhu},
+  journal={Computer Methods in Applied Mechanics and Engineering},
+  volume={393},
+  pages={114764},
+  year={2022},
+  publisher={Elsevier}
 }
